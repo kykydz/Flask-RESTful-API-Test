@@ -17,10 +17,6 @@ app.config['jwt_BLACKLIST_TOKEN_CHECKS'] = ['access', 'refresh']
 app.secret_key = 'jose' # encrypt the JWT using this key phrase
 api = Api(app)
 
-#flask decorator
-@app.before_first_request
-def create_table():
-    db.create_all() #call SQLAlchemy function to create table and database that SQLAlchemy see in models
 
 jwt = JWTManager(app)
 
